@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>Lotto3</h1>
+    <h1>Lotto5</h1>
     <canvas id="Canvas1" width="800" height="800" style="border: 1px solid black;"></canvas>
     <script>
         var c1 = document.getElementById("Canvas1");
@@ -37,13 +37,18 @@
             ct1.fillText(set[i], 10, 20 + 15 * i);
         }
         result=[0,0,0,0,0,0,0]
+    doDraws(1)
+        
+    function doDraws(rp){
         for(draw=0; draw<1000000; draw++){    
          var win=pic6(59)
               for (i = 0; i < setn; i++) {
                   result[countMatches(win,set[i])]++
               }
         }
-          ct1.fillText(result,10,250)        
+          ct1.fillText(result,10,250+rp*15)
+        if(rp<10){doDraws(rp+1)}
+    }
     </script>
 </body>
 </html>
