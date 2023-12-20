@@ -6,7 +6,8 @@
         var c1 = document.getElementById("Canvas1");
         var ct1 = c1.getContext("2d");
         ct1.font = "14px Monospace";
-        setn = 10;
+        setn = 100;
+        maxg=1
         var set = [];
 
         function pic6(rang) {
@@ -55,7 +56,7 @@
        await delay()
           ct1.fillText(result,10,250+rp*15)
      
-        if(rp<10){ doDraws(rp+1) }
+        if(rp<maxg){ doDraws(rp+1) }
         else{ ct1.fillText("win=£"+winVal+"  in "+winc, 200,460) }
     }
     
