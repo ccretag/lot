@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>Lotto6</h1>
+    <h1>Lotto8</h1>
     <canvas id="Canvas1" width="800" height="800" style="border: 1px solid black;"></canvas>
     <script>
         var c1 = document.getElementById("Canvas1");
@@ -40,16 +40,20 @@
     doDraws(1)
         
     async function doDraws(rp){
-        for(draw=0; draw<100000; draw++){    
+        for(draw=0; draw<100000; draw++){
+            win=0,winc=0
          var win=pic6(59)
               for (i = 0; i < setn; i++) {
-                  result[countMatches(win,set[i])]++
+                  c=countMatches(win,set[i])
+                  result[c]++
+                  if(c>2){win+=10*c; winc++)
               }
         }
        await delay()
           ct1.fillText(result,10,250+rp*15)
      
         if(rp<10){ doDraws(rp+1) }
+        else{ alert("win=£"+win+"  in "+winc) }
     }
     
     async function delay(){
