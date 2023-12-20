@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>test3</h1>
+    <h1>test1</h1>
     <canvas id="Canvas1" width="800" height="800" style="border: 1px solid black;">
 <script>
 var c1 = document.getElementById("Canvas1");
@@ -8,16 +8,20 @@ var ct1 = c1.getContext("2d");
 ct1.font="14px Monospace"
 setn=10
 var set=[]
-
 for(i=0;i<setn;i++){
- set[i]=[0,0,0,0,0,0]
+    set[i]=pic6()
+    ct1.fillText(set[i].10.20+15*i)
+}
+    
+function pic6(){
+var pick=[0,0,0,0,0,0]
  for(k=0;k<6;k++){
     do{
      n=1+Math.floor(Math.random()*59)
-    }while(!set[i].includes(n))
-    set[i][k]=n
+    }while(!pick.includes(n))
+    pick[k]=n
  }
- ct1.fillText(set[i],10,20+15*i)
+return pick
 }
 </script>
 </body>
