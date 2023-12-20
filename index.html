@@ -1,7 +1,7 @@
 <html>
 <body>
     <h1>Lotto8</h1>
-    <canvas id="Canvas1" width="800" height="800" style="border: 1px solid black;"></canvas>
+    <canvas id="Canvas1" width="800" height="600" style="border: 1px solid black;"></canvas>
     <script>
         var c1 = document.getElementById("Canvas1");
         var ct1 = c1.getContext("2d");
@@ -56,7 +56,7 @@
           ct1.fillText(result,10,250+rp*15)
      
         if(rp<10){ doDraws(rp+1) }
-        else{ alert("win=£"+winVal+"  in "+winc) }
+        else{ ct1.fillText("win=£"+winVal+"  in "+winc, 200,400}
     }
     
     async function delay(){
