@@ -10,9 +10,12 @@ setn=10
 var set=[]
 
 for(i=0;i<setn;i++){
- set[i]=[1,2,3,4,5,6]
+ set[i]=[0,0,0,0,0,0]
  for(k=0;k<6;k++){
-  set[i][k]=1+Math.floor(Math.random()*59)
+    do{
+     n=1+Math.floor(Math.random()*59)
+    }while(!set[i].includes(n))
+    set[i][k]=n
  }
  ct1.fillText(set[i],10,20+15*i)
 }
