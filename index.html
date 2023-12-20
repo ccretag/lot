@@ -9,11 +9,11 @@
         setn = 10;
         var set = [];
 
-        function pic6() {
+        function pic6(rang) {
             var pick = [0, 0, 0, 0, 0, 0];
             for (k = 0; k < 6; k++) {
                 do {
-                    n = 1 + Math.floor(Math.random() * 59);
+                    n = 1 + Math.floor(Math.random() * rang);
                 } while (pick.includes(n));
                 pick[k] = n;
             }
@@ -22,10 +22,28 @@
             });
         }
 
+        function countMatches(winningNumbers, userNumbers) {
+            var matchCount = 0;
+            for (var i = 0; i < userNumbers.length; i++) {
+                if (winningNumbers.includes(userNumbers[i])) {
+                    matchCount++;
+                }
+            }
+            return matchCount;
+        }
+
         for (i = 0; i < setn; i++) {
-            set[i] = pic6();
+            set[i] = pic6(20);
             ct1.fillText(set[i], 10, 20 + 15 * i);
         }
+var win=pic6(59)
+        result=[0,0,0,0,0,0,0]
+        for(draw=0; draw<100000; draw++){
+              for (i = 0; i < setn; i++) {
+                  result[countMatches(win,set[i])]++
+              }
+        }
+          alert(result)        
     </script>
 </body>
 </html>
