@@ -40,14 +40,17 @@
     doDraws(1)
         
     async function doDraws(rp){
+        winVal=0,winc=0
+        
         for(draw=0; draw<100000; draw++){
-            winVal=0,winc=0
+          didwin=false
          var win=pic6(59)
               for (i = 0; i < setn; i++) {
                   c=countMatches(win,set[i])
                   result[c]++
-                  if(c>2){winVal+=10*c; winc++}
+                  if(c>2){winVal+=10*c; didwin=true}
               }
+            if(didwin){winc++}
         }
        await delay()
           ct1.fillText(result,10,250+rp*15)
