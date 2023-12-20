@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>Lotto2</h1>
+    <h1>Lotto3</h1>
     <canvas id="Canvas1" width="800" height="800" style="border: 1px solid black;"></canvas>
     <script>
         var c1 = document.getElementById("Canvas1");
@@ -17,7 +17,9 @@
                 } while (pick.includes(n));
                 pick[k] = n;
             }
-            return pick;
+             return pick.sort(function(a, b) {
+                return a - b;
+            });
         }
 
         for (i = 0; i < setn; i++) {
