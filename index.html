@@ -35,7 +35,7 @@
     var r=prompt("Lotto 1 to ?")
         for (i = 0; i < setn; i++) {
             set[i] = pic6(r);
-            ct1.fillText(set[i], 10, 20 + 15 * i);
+            ct1.fillText(set[i], 10, 20 + 5 * i);
         }
         result=[0,0,0,0,0,0,0]
           winVal=0,winc=0
@@ -55,7 +55,7 @@
         }
        await delay()
           ct1.font = "14px Monospace";
-          ct1.fillText(result,10,250+rp*15)
+          ct1.fillText(result,100,250+rp*15)
      
         if(rp<maxg){ doDraws(rp+1) }
         else{ ct1.fillText("win=£"+winVal+"  in "+winc, 200,460) }
