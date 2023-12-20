@@ -1,0 +1,69 @@
+<html>
+<body>
+    <h1>Lotto Simulation</h1>
+    <script>
+        var drawCount = 100000;
+        var matchCounts = {
+            match4: 0,
+            match5: 0,
+            match6: 0
+        };
+
+        function simulateLottoDraw() {
+            var winningNumbers = generateWinningNumbers();
+            var userNumbers = generateUserNumbers();
+
+            var matchCount = countMatches(winningNumbers, userNumbers);
+
+            if (matchCount === 4) {
+                matchCounts.match4++;
+            } else if (matchCount === 5) {
+                matchCounts.match5++;
+            } else if (matchCount === 6) {
+                matchCounts.match6++;
+            }
+        }
+
+        function generateWinningNumbers() {
+            return pic6();
+        }
+
+        function generateUserNumbers() {
+            return pic6();
+        }
+
+        function countMatches(winningNumbers, userNumbers) {
+            var matchCount = 0;
+            for (var i = 0; i < userNumbers.length; i++) {
+                if (winningNumbers.includes(userNumbers[i])) {
+                    matchCount++;
+                }
+            }
+            return matchCount;
+        }
+
+        function pic6() {
+            var pick = [0, 0, 0, 0, 0, 0];
+            for (var k = 0; k < 6; k++) {
+                do {
+                    var n = 1 + Math.floor(Math.random() * 59);
+                } while (pick.includes(n));
+                pick[k] = n;
+            }
+            return pick.sort(function(a, b) {
+                return a - b;
+            });
+        }
+
+        // Simulate lotto draws
+        for (var draw = 0; draw < drawCount; draw++) {
+            simulateLottoDraw();
+        }
+
+        // Display results
+        document.write("Matches 4 numbers: " + matchCounts.match4 + "<br>");
+        document.write("Matches 5 numbers: " + matchCounts.match5 + "<br>");
+        document.write("Matches 6 numbers: " + matchCounts.match6 + "<br>");
+    </script>
+</body>
+</html>
