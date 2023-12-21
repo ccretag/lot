@@ -1,0 +1,27 @@
+<html>
+<body>
+    <h1>the</h1>
+    <canvas id="Canvas1" width="800" height="600" style="border: 1px solid black;"></canvas>
+    <script>
+        var c1 = document.getElementById("Canvas1");
+        var ct1 = c1.getContext("2d");
+        ct1.font = "4px Monospace";
+        setn = 100;
+     
+    doDraws(200,400,10)
+        
+    async function doDraws(d,a,b){
+      if(b>400){return}
+      ct1.fillText("x",a,b)
+     await delay()
+     doDraws(d/2,a-d/2,b+8)
+      doDraws(d/2,a+d/2,b+8)
+    
+    }
+    
+    async function delay(){
+     await new Promise(resolve => setTimeout(resolve, 1000 / 60))
+  }
+    </script>
+</body>
+</html>
