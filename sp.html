@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>the</h1>
+    <h1>the2</h1>
     <canvas id="Canvas1" width="800" height="600" style="border: 1px solid black;"></canvas>
     <script>
         var c1 = document.getElementById("Canvas1");
@@ -13,7 +13,7 @@
     async function doDraws(d,a,b){
       if(b>400){return}
       ct1.fillText("x",a,b)
-     await delay()
+     delay()
      doDraws(d/2,a-d/2,b+8)
       doDraws(d/2,a+d/2,b+8)
     
