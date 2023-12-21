@@ -10,12 +10,13 @@
      
     doDraws(200,400,10)
         
-    async function doDraws(d,a,b){
+   // async function doDraws(d,a,b){
+ function doDraws(d,a,b){
         if(b>400){return}
         ct1.fillText("x",a,b)
-       doDraws(d/2,a-d/2,b+8)
+  setTimeout( function(){ doDraws(d/2,a-d/2,b+8)},20 )
   //    doDraws(d/2,a+d/2,b+8)
-       await delay()
+ //      await delay()
     }
     
     async function delay(){
