@@ -13,7 +13,7 @@
     async function doDraws(d,a,b){
       if(b>400){return}
       ct1.fillText("x",a,b)
-     delay()
+     await delay()
      doDraws(d/2,a-d/2,b+8)
       doDraws(d/2,a+d/2,b+8)
     
