@@ -5,8 +5,8 @@
     <script>
         var c1 = document.getElementById("Canvas1");
         var ct1 = c1.getContext("2d");
-        ct1.font = "4px Monospace";
-        setn = 100;
+        ct1.font = "7px Monospace";
+        setn = 20;
         maxg=1
         var set = [];
 
@@ -35,7 +35,7 @@
     var r=prompt("Lotto 1 to ?")
         for (i = 0; i < setn; i++) {
             set[i] = pic6(r);
-            ct1.fillText(set[i], 10, 20 + 5 * i);
+            ct1.fillText(set[i], 10, 20 + 7*i)
         }
         result=[0,0,0,0,0,0,0]
           winVal=0,winc=0
@@ -57,8 +57,8 @@
           ct1.font = "14px Monospace";
           ct1.fillText(result,100,250+rp*15)
      
-        if(rp<maxg){ doDraws(rp+1) }
-        else{ ct1.fillText("win=£"+winVal+"  in "+winc, 200,460) }
+      // if(rp<maxg){ doDraws(rp+1) } 
+            ct1.fillText("win=£"+winVal+"  in "+winc, 200,460) 
     }
     
     async function delay(){
