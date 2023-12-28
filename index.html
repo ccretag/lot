@@ -43,7 +43,7 @@
         
     async function doDraws(rp){
         
-        for(draw=0; draw<1000; draw++){
+        for(draw=0; draw<10000; draw++){
           didwin=false
          var win=pic6(59)
               for (i = 0; i < setn; i++) {
@@ -55,10 +55,10 @@
         }
        await delay()
           ct1.font = "14px Monospace";
-          ct1.fillText(result,100,250+rp*15)
+          ct1.fillText(result,100,200+rp*15)
      
       // if(rp<maxg){ doDraws(rp+1) } 
-            ct1.fillText("win=£"+winVal+"  in "+winc, 200,460) 
+            ct1.fillText("win=£"+winVal+"  in "+winc, 200,160) 
     }
     
     async function delay(){
