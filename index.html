@@ -39,9 +39,9 @@
         }
         result=[0,0,0,0,0,0,0]
           winVal=0,winc=0
-    doDraws(1)
+    setTimeout(doDraws,100)
         
-    async function doDraws(rp){
+    async function doDraws(){
         
         for(draw=0; draw<10000; draw++){
           didwin=false
@@ -57,7 +57,6 @@
           ct1.font = "14px Monospace";
           ct1.fillText(result,100,200+rp*15)
      
-      // if(rp<maxg){ doDraws(rp+1) } 
             ct1.fillText("win=£"+winVal+"  in "+winc, 200,160) 
     }
     
